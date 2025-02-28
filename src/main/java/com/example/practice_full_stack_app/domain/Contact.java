@@ -9,7 +9,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.Collate;
 import org.hibernate.annotations.UuidGenerator;
 
 @Entity // JPA
@@ -37,4 +36,7 @@ public class Contact {
     private String status;
     private String photoUrl;
 
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
+    }
 }

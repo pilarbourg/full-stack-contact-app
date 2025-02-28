@@ -1,0 +1,35 @@
+
+# Data source configuration
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/testdatabase
+    username: postgres
+    password: madrid1997
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update  # Use "update" for development, "validate" for production
+    properties:
+      hibernate:
+        globally_quoted_identifiers: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 1000MB
+      max-request-size: 1000MB
+  mvc:
+    dispatch-options-request: true
+    log-resolved-exception: false
+    async:
+      request-timeout: 3600000
+
+server:
+  port: 8080
+  error:
+    path: /user/error
+    whitelabel:
+      enabled: false
